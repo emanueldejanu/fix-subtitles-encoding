@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pkg": "npm run pkg-win && npm run pkg-macos && npm run pkg-linux",
+    "pkg-macos": "pkg --compress GZip -t node16-macos-x64 conv-to-utf8.js",
+    "pkg-linux": "pkg --compress GZip -t node16-linux-x64 conv-to-utf8.js",
+    "pkg-win": "pkg --compress GZip -t node16-win-x64 conv-to-utf8.js",
+    "pkg-install": "npm install -g pkg"
   },
   "keywords": [],
   "author": "",
